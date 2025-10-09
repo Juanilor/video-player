@@ -1,0 +1,12 @@
+<h1>Video Player</h1>
+
+
+<div class="video-container">
+    @if (currentVideo$ | async; as currentVideo ) {
+
+    <video #videoPlayer width="100%" height="auto" controls [src]="currentVideo.url">
+
+    </video>
+    <h3>{{currentVideo.title}}</h3>
+}
+</div>

@@ -1,0 +1,33 @@
+
+
+
+<div class="playlist-container">
+    <h2>Playlist</h2>
+    <ul>
+        @for (video of (videos$ | async); track video) {
+        <li  (click)="selectVideo(video)">
+
+                <img [src]="video.thumbnail" [alt]="video.title">
+                <div class="video-info">
+                    @if(video.thumbnail){
+                        <span class="title">{{video.title}}</span>
+                    }
+                </div>
+
+                <button class="delete-btn" (click)="deleteVideo(video.id)">🗑️</button>
+            </li>
+            
+        }
+    </ul>
+
+
+    <div class="add-video-form">
+        <input type="text" placeholder="Titulo del video"
+        [(ngModel)]="newVideoTitle" />
+        <input type="text" placeholder="Enlace del video"
+        [(ngModel)]="newVideoUrl" />
+        <button (click)="addVideo()">Agregar</button>
+    </div>
+
+
+</div>

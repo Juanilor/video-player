@@ -1,12 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { VideoPlayerComponent } from "./components/video-player/video-player.component";
+import { PlaylistComponent } from "./components/playlist/playlist.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ VideoPlayerComponent, PlaylistComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('video-player');
+
+
+
 }
