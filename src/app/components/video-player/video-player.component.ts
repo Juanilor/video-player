@@ -13,10 +13,6 @@ import { Observable } from "rxjs";
 
 export class VideoPlayerComponent {
 
-    // @Input() currentVideo = {
-    //     title: 'Test Video',
-    //     url: 'https://www.w3schools.com/html/mov_bbb.mp4'
-    // }
 
     currentVideo$: Observable<Video | null>
 
@@ -24,9 +20,5 @@ export class VideoPlayerComponent {
     constructor(private videoService: VideoService) {
         this.currentVideo$ = this.videoService.currentVideo$
     }
-
-
-
-
 
 }
